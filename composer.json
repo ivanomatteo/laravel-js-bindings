@@ -1,0 +1,53 @@
+{
+    "name": "ivanomatteo/laravel-js-bindings",
+    "description": "Javascript Bindigns for laravel: routes, constants, localization",
+    "keywords": [
+        "ivanomatteo",
+        "laravel-js-bindings"
+    ],
+    "homepage": "https://github.com/ivanomatteo/laravel-js-bindings",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ivano Matteo",
+            "email": "ivanomatteo@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "IvanoMatteo\\LaravelJsBindings\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IvanoMatteo\\LaravelJsBindings\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IvanoMatteo\\LaravelJsBindings\\LaravelJsBindingsServiceProvider"
+            ],
+            "aliases": {
+                "LaravelJsBindings": "IvanoMatteo\\LaravelJsBindings\\LaravelJsBindingsFacade"
+            }
+        }
+    }
+}
