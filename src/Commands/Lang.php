@@ -74,7 +74,11 @@ class Lang extends Command
             }
             if (is_file($path . ".json")) {
                 $tmp = json_decode(file_get_contents($path . ".json"),true);
-                $langMap = array_merge($langMap,$tmp);
+                if($tmp === null){
+                    echo "file: $path.json is not a valid json.\n";
+                }
+                //$langMap = array_merge($langMap,$tmp);
+                $langMap['__json__'] = $tmp;
             }
             if(!empty($langMap)){
                 $outfile = $out_path . '/' . $l . '.js';
